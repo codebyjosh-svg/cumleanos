@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+  --azul-noche: #10182f;
+  --azul-claro: #202c50;
+  --lavanda: #d9b8ff;
+  --rosa: #f4c6d9;
+  --blanco: #fffaff;
+  --texto-suave: #d9dbea;
+  --borde: rgba(255, 255, 255, 0.15);
+}
+
+/* CONFIGURACIÓN GENERAL */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, #35446d 0%, transparent 35%),
+    radial-gradient(circle at bottom right, #563b63 0%, transparent 35%),
+    var(--azul-noche);
+  color: var(--blanco);
+  font-family: "DM Sans", sans-serif;
+  overflow-x: hidden;
+}
+
+/* FONDO CON ESTRELLAS */
+
+.fondo-estrellas {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.35;
+  background-image:
+    radial-gradient(circle, white 1px, transparent 1px),
+    radial-gradient(circle, var(--lavanda) 1px, transparent 1px);
+  background-size: 90px 90px, 140px 140px;
+  background-position: 10px 20px, 50px 70px;
+}
+
+/* CONTENEDOR */
+
+.contenedor {
+  width: min(920px, 90%);
+  margin: auto;
+}
+
+/* INICIO */
+
+.inicio {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.contenido-inicio {
+  animation: aparecer 1.3s ease;
+}
+
+.fecha,
+.etiqueta {
+  color: var(--lavanda);
+  font-size: 0.78rem;
+  letter-spacing: 3px;
+  font-weight: 600;
+}
+
+.fecha {
+  margin-bottom: 20px;
+}
+
+h1,
+h2 {
+  font-family: "Playfair Display", serif;
+}
+
+h1 {
+  font-size: clamp(2.7rem, 8vw, 5.8rem);
+  line-height: 1.08;
+  margin-bottom: 25px;
+}
+
+h1 span {
+  color: var(--rosa);
+}
+
+.subtitulo {
+  max-width: 550px;
+  margin: auto;
+  color: var(--texto-suave);
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+/* BOTÓN */
+
+button {
+  margin-top: 35px;
+  padding: 15px 28px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, var(--rosa), var(--lavanda));
+  color: var(--azul-noche);
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  transition: 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* SECCIONES */
+
+.seccion {
+  padding: 90px 0;
+}
+
+.seccion h2 {
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  margin: 15px 0 35px;
+}
+
+.carta-seccion {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* CARTA */
+
+.carta {
+  padding: clamp(25px, 5vw, 55px);
+  border: 1px solid var(--borde);
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(12px);
+}
+
+.carta p {
+  color: var(--texto-suave);
+  font-size: 1.05rem;
+  line-height: 1.95;
+  margin-bottom: 25px;
+}
+
+.carta p:last-of-type {
+  margin-bottom: 0;
+}
+
+.firma {
+  color: var(--rosa);
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  text-align: right;
+  margin-top: 30px;
+}
+
+/* GALERÍA DE SOLO 2 FOTOS */
+
+.galeria {
+  width: min(650px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+.foto {
+  width: 100%;
+  height: 260px;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--borde);
+  border-radius: 16px;
+  background: var(--azul-claro);
+}
+
+.foto img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.foto:hover img {
+  transform: scale(1.04);
+}
+
+.nota-fotos {
+  text-align: center;
+  color: #b9bdd4;
+  margin-top: 22px;
+  font-size: 0.9rem;
+}
+
+/* SECCIÓN FINAL */
+
+.final {
+  text-align: center;
+}
+
+.final h2 {
+  color: var(--rosa);
+  margin-bottom: 20px;
+}
+
+.final p {
+  color: var(--texto-suave);
+  line-height: 1.8;
+}
+
+.corazon {
+  color: var(--rosa);
+  font-size: 4rem;
+  margin-top: 25px;
+  animation: latido 2s infinite;
+}
+
+/* PIE DE PÁGINA */
+
+footer {
+  padding: 25px;
+  text-align: center;
+  color: #aaaec5;
+  font-size: 0.8rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* MOSTRAR Y OCULTAR LA CARTA */
+
+.oculto {
+  display: none;
+}
+
+.mostrar {
+  display: block;
+  animation: aparecer 1s ease;
+}
+
+/* ANIMACIONES */
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes latido {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+/* DISEÑO PARA CELULAR */
+
+@media (max-width: 700px) {
+  .seccion {
+    padding: 60px 0;
+  }
+
+  .galeria {
+    width: min(360px, 100%);
+    grid-template-columns: 1fr;
+  }
+
+  .foto {
+    height: 280px;
+  }
+
+  .carta p {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .firma {
+    font-size: 1.3rem;
+  }
+}
